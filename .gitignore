@@ -1,0 +1,7 @@
+*.pyc
+*~
+__pycache__
+env_projeto_barbearia
+db.mysql
+/static
+.DS_Store
