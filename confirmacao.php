@@ -29,13 +29,13 @@
                 <a href="index.php" class="nav-link me-2 w-100">Home</a>
               </li>
               <li class="nav-item">
-              <a href="agendamento.php" class="nav-link me-2 w-100">Agendamento</a>
+              <a href="agendamento.php" class="nav-link me-2 w-100 active">Agendamento</a>
               </li>
               <li class="nav-item">
                 <a href="galeria.php" class="nav-link me-2 w-100">Galeria</a>
               </li>
               <li class="nav-item">
-                <a href="catalogo.php" class="nav-link me-2 w-100 active">Catálogo</a>
+                <a href="catalogo.php" class="nav-link me-2 w-100">Catálogo</a>
               </li>
             </ul>
             <div class="d-flex">
@@ -74,68 +74,26 @@
       </nav>
     </header>
 <main>
-  <section>
-    <div class="container px-4 py-5 border-bottom" id="custom-cards">
-      <h2 class="pb-2 border-bottom">Catálogo</h2>
-
-      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-            style="background-image: url('img/img2.jpg');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-              <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lorem ipsum dolor sit amet</h2>
-              <ul class="d-flex list-unstyled mt-auto">
-                <li class="d-flex align-items-center me-3">
-                  <small>Lorem Ipsum</small>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-            style="background-image: url('img/img2.jpg');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-              <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit.</h2>
-              <ul class="d-flex list-unstyled mt-auto">
-                <li class="d-flex align-items-center me-3">
-                  <small>Lorem Ipsum</small>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-            style="background-image: url('img/img2.jpg');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-              <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lorem ipsum dolor sit amet,</h2>
-              <ul class="d-flex list-unstyled mt-auto">
-                <li class="d-flex align-items-center me-3">
-                  <small>Lorem Ipsum</small>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section>
+<div class="container px-4 py-5 border-bottom">
+    <h1>Agendamento concluido com sucesso!</h1>
+</br>
+    <h3>Em breve você receberá uma mensagem no whatsapp para confirmação ou cancelamento de seu agendamento. </h3>
+</div>
+</section>
 </main>
 <footer class="text-muted py-2">
   <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Voltar ao topo</a>
-    </p>
+
     <div class="row">
       <h2 class="text-white">Como chegar</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.573359554298!2d-47.496781985023105!3d-23.511871884707446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f5bc06ed65f9%3A0x1a5a4482a917c0b!2sYeshua%20barber%20shop%20e%20sal%C3%A3o%20de%20beleza!5e0!3m2!1spt-BR!2sbr!4v1635208098684!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="col"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7317.14671270287!2d-47.494593!3d-23.511872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1a5a4482a917c0b!2sYeshua%20barber%20shop%20e%20sal%C3%A3o%20de%20beleza!5e0!3m2!1spt-BR!2sbr!4v1636944834098!5m2!1spt-BR!2sbr" width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     <p class="mb-0 col">Projeto Integrador desenvolvido como trabalho acadêmico. Eixo de Computação - Univesp - 2021</p>
   </div>
 </div>
+<p class="float-end mb-1">
+      <a href="#">Voltar ao topo</a>
+    </p>
 </footer>
 
   </div>

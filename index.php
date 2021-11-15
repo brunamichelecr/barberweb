@@ -24,18 +24,18 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
               <li class="nav-item">
-                <a href="index.html" class="nav-link me-2 w-100 active">Home</a>
+                <a href="index.php" class="nav-link me-2 w-100 active">Home</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link me-2 w-100"  data-bs-toggle="modal" data-bs-target="#exampleModal">Agendamentos</a>
+              <a href="agendamento.php" class="nav-link me-2 w-100">Agendamento</a>
               </li>
               <li class="nav-item">
-                <a href="galeria.html" class="nav-link me-2 w-100">Galeria</a>
+                <a href="galeria.php" class="nav-link me-2 w-100">Galeria</a>
               </li>
               <li class="nav-item">
-                <a href="catalogo.html" class="nav-link me-2 w-100">Catálogo</a>
+                <a href="catalogo.php" class="nav-link me-2 w-100">Catálogo</a>
               </li>
             </ul>
             <div class="d-flex">
@@ -146,111 +146,25 @@
     </main>
 
     <footer class="text-muted py-2">
-      <div class="container">
-        <p class="float-end mb-1">
-          <a href="#">Voltar ao topo</a>
-        </p>
-        <div class="row">
-          <h2 class="text-white">Como chegar</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.573359554298!2d-47.496781985023105!3d-23.511871884707446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f5bc06ed65f9%3A0x1a5a4482a917c0b!2sYeshua%20barber%20shop%20e%20sal%C3%A3o%20de%20beleza!5e0!3m2!1spt-BR!2sbr!4v1635208098684!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="col"></iframe>
-        <p class="mb-0 col">Projeto Integrador desenvolvido como trabalho acadêmico. Eixo de Computação - Univesp - 2021</p>
-      </div>
-    </div>
-    </footer>
+  <div class="container">
+
+    <div class="row">
+      <h2 class="text-white">Como chegar</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7317.14671270287!2d-47.494593!3d-23.511872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1a5a4482a917c0b!2sYeshua%20barber%20shop%20e%20sal%C3%A3o%20de%20beleza!5e0!3m2!1spt-BR!2sbr!4v1636944834098!5m2!1spt-BR!2sbr" width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <p class="mb-0 col">Projeto Integrador desenvolvido como trabalho acadêmico. Eixo de Computação - Univesp - 2021</p>
+  </div>
+</div>
+<p class="float-end mb-1">
+      <a href="#">Voltar ao topo</a>
+    </p>
+</footer>
 
   </div>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">Agendamento</h5>
-          <button type="button" class="btn-close btn-warning" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form>
-                <div class="mb-3">
-                  <label for="telefone" class="form-label">Telefone</label>
-                  <input type="tel" class="form-control" id="telefone" aria-describedby="telefone" placeholder="Telefone" >
-                  <div id="telefone" class="form-text">*Este número receberá uma mensagem por whatsapp 1 hora antes do agendamento para confirmação.
-                </div>
-                </div>
-                <div class="row mb-3">
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Nome" aria-label="First name">
-                  </div>
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Sobrenome" aria-label="Last name">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="telefone" class="form-label">Data de Aniversário</label>
-                  <select class="form-select col" aria-label="Default select example">
-                    <option selected>Mês</option>
-                    <option value="1">Janeiro</option>
-                    <option value="2">Fevereiro</option>
-                    <option value="3">Março</option>
-                  </select>
-                  <select class="form-select col" aria-label="Default select example">
-                    <option selected>Dia</option>
-                    <option value="1">01</option>
-                    <option value="2">02</option>
-                    <option value="3">03</option>
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Selecione o tipo de serviço</option>
-                    <option value="1">Corte</option>
-                    <option value="2">Pintura</option>
-                    <option value="3">Barba</option>
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Selecione o profissional</option>
-                    <option value="1">Adriano</option>
-                    <option value="2">Oliveira</option>
-                    <option value="3">Andreia</option>
-                  </select>
-                </div>
-                <div class="col mb-3">
-                  <input type="text"  class="form-control" placeholder="Selecione a Data" id="datepicker">
-                </div>
-                <div class="mb-3">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Selecione o Horário</option>
-                    <option value="1">10:00</option>
-                    <option value="2">11:00</option>
-                    <option value="3">12:00</option>
-                  </select>
-                </div>
-              </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <a class="btn btn-warning" data-bs-toggle="modal" href="#modalConfirmacao" role="button">Confirmar</a>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   
 
-  <div class="modal fade" id="modalConfirmacao" tabindex="-1" aria-labelledby="modalConfirmacao" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">Agendamento</h5>
-          <button type="button" class="btn-close btn-warning" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Agendamento concluído com sucesso!</p>
-          <p> Em breve você receberá uma mensagem no whatsapp com um link para confirmação ou cancelamento de seu agendamento.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
