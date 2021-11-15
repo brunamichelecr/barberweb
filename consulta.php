@@ -1,3 +1,32 @@
+<?php
+
+
+try {
+  $conexao = new PDO("mysql:host=localhost; dbname=db_barber01", "root", "Isabel2410.");
+  $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conexao->exec("set names utf8");
+} catch (PDOException $erro) {
+  echo "Erro na conexão:" . $erro->getMessage();
+}
+$id = (isset($_GET["id"]) && $_GET["id"] != null) ? $_GET["id"] : "";
+if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
+    try {
+        $stmt = $conexao->prepare("DELETE FROM tb_agenda WHERE id = ?");
+        $stmt->bindParam(1, $id, PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            echo "Registo foi excluído com êxito";
+            header("Location: consulta.php");
+            $id = null;
+        } else {
+            throw new PDOException("Erro: Não foi possível executar a declaração sql");
+        }
+    } catch (PDOException $erro) {
+        echo "Erro: ".$erro->getMessage();
+    }
+}
+?>
+
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -14,7 +43,7 @@
 </head>
 
 <body class="bg-dark">
-  <div class="container-fluid p-3 mb-2 text-white">
+<div class="container-fluid p-5 mb-2 text-white">
     <header class="mb-auto">
       <nav class="container-fluid navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container gap-2">
@@ -24,18 +53,18 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
               <li class="nav-item">
                 <a href="index.php" class="nav-link me-2 w-100">Home</a>
               </li>
               <li class="nav-item">
-              <a href="agendamento.php" class="nav-link me-2 w-100">Agendamento</a>
+              <a href="agendamento.php" class="nav-link me-2 w-100 active">Agendamento</a>
               </li>
               <li class="nav-item">
                 <a href="galeria.php" class="nav-link me-2 w-100">Galeria</a>
               </li>
               <li class="nav-item">
-                <a href="catalogo.php" class="nav-link me-2 w-100 active">Catálogo</a>
+                <a href="catalogo.php" class="nav-link me-2 w-100">Catálogo</a>
               </li>
             </ul>
             <div class="d-flex">
@@ -73,88 +102,57 @@
         </div>
       </nav>
     </header>
-<main>
-  <section>
-    <div class="container px-4 py-5 border-bottom" id="custom-cards">
-      <h2 class="pb-2 border-bottom">Catálogo</h2>
+    <div class="container px-4 py-5 border-bottom">
 
-      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-            style="background-image: url('img/img2.jpg');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-              <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lorem ipsum dolor sit amet</h2>
-              <ul class="d-flex list-unstyled mt-auto">
-                <li class="d-flex align-items-center me-3">
-                  <small>Lorem Ipsum</small>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <table border="1" width="100%">
+    <tr>
+        <th>Telefone</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Aniversário</th>
+        <th>Serviço</th>
+        <th>Profissional</th>
+        <th>Data</th>
+        <th>Hora</th>
+        <th>Ações</th>
+    </tr>
+    <?php
+    try {
+ 
+ $stmt = $conexao->prepare("SELECT * FROM tb_agenda");
 
-        <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-            style="background-image: url('img/img2.jpg');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-              <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit.</h2>
-              <ul class="d-flex list-unstyled mt-auto">
-                <li class="d-flex align-items-center me-3">
-                  <small>Lorem Ipsum</small>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-            style="background-image: url('img/img2.jpg');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-              <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lorem ipsum dolor sit amet,</h2>
-              <ul class="d-flex list-unstyled mt-auto">
-                <li class="d-flex align-items-center me-3">
-                  <small>Lorem Ipsum</small>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+     if ($stmt->execute()) {
+         while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+             echo "<tr>";
+             echo "<td>".$rs->telefone."</td><td>".$rs->nome."</td><td>".$rs->sobrenome
+                        ."</td><td>".$rs->maniversario." de ".$rs->daniversario."</td><td>".$rs->servico."</td><td>".$rs->profissional
+                        ."</td><td>".$rs->dia."</td><td>".$rs->hora."</td><td>"
+                        ."<a href=\"?act=del&id=".$rs->id."\">[Excluir]</a></center></td>";
+             echo "</tr>";
+         }
+     } else {
+         echo "Erro: Não foi possível recuperar os dados do banco de dados";
+     }
+} catch (PDOException $erro) {
+ echo "Erro: ".$erro->getMessage();
+}
+?>
+</table>
     </div>
-  </section>
-</main>
-<footer class="text-muted py-2">
-  <div class="container">
 
-    <div class="row">
-      <h2 class="text-white">Como chegar</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7317.14671270287!2d-47.494593!3d-23.511872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1a5a4482a917c0b!2sYeshua%20barber%20shop%20e%20sal%C3%A3o%20de%20beleza!5e0!3m2!1spt-BR!2sbr!4v1636944834098!5m2!1spt-BR!2sbr" width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    <p class="mb-0 col">Projeto Integrador desenvolvido como trabalho acadêmico. Eixo de Computação - Univesp - 2021</p>
-  </div>
-</div>
-<p class="float-end mb-1">
-      <a href="#">Voltar ao topo</a>
-    </p>
-</footer>
-
-  </div>
-
-
+        </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="jquery/jquery.js"></script>
-    <script src="jquery/jquery-ui.js"></script>
-    <script>
-      $("#datepicker").datepicker();
-    </script>
-  </body>
+<!-- Option 2: Separate Popper and Bootstrap JS -->
 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="jquery/jquery.js"></script>
+<script src="jquery/jquery-ui.js"></script>
+<script>
+  $("#datepicker").datepicker();
+</script>
+        </body>
 
-</html>
+        </html>

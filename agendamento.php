@@ -193,18 +193,18 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
             }
             ?> >
                     <option selected>Mês</option>
-                    <option value="1">Janeiro</option>
-                    <option value="2">Fevereiro</option>
-                    <option value="3">Março</option>
-                    <option value="4">Abril</option>
-                    <option value="5">Maio</option>
-                    <option value="6">Junho</option>
-                    <option value="7">Julho</option>
-                    <option value="8">Agosto</option>
-                    <option value="9">Setembro</option>
-                    <option value="10">Outubro</option>
-                    <option value="11">Novembro</option>
-                    <option value="12">Dezembro</option>
+                    <option value="Janeiro">Janeiro</option>
+                    <option value="Fevereiro">Fevereiro</option>
+                    <option value="Março">Março</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Maio">Maio</option>
+                    <option value="Junho">Junho</option>
+                    <option value="Julho">Julho</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Setembro">Setembro</option>
+                    <option value="Outubro">Outubro</option>
+                    <option value="Novembro">Novembro</option>
+                    <option value="Dezembro">Dezembro</option>
                   </select>
         </div>
 
@@ -215,15 +215,15 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
             }
             ?> >
                     <option selected>Dia</option>
-                    <option value="1">01</option>
-                    <option value="2">02</option>
-                    <option value="3">03</option>
-                    <option value="4">04</option>
-                    <option value="5">05</option>
-                    <option value="6">06</option>
-                    <option value="7">07</option>
-                    <option value="8">08</option>
-                    <option value="9">09</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
                     <option value="10">10</option>
                     <option value="11">11</option>
                     <option value="12">12</option>
@@ -258,9 +258,9 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
             }
             ?> >
                     <option selected>Selecione o tipo de serviço</option>
-                    <option value="1">Corte</option>
-                    <option value="2">Pintura</option>
-                    <option value="3">Barba</option>
+                    <option value="Corte">Corte</option>
+                    <option value="Pintura">Pintura</option>
+                    <option value="Barba">Barba</option>
                   </select>
                 </div>
                 <div class="mb-3">
@@ -270,9 +270,9 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
             }
             ?> >
                     <option selected>Selecione o profissional</option>
-                    <option value="1">Adriano</option>
-                    <option value="2">Oliveira</option>
-                    <option value="3">Andreia</option>
+                    <option value="Adriano">Adriano</option>
+                    <option value="Andreia">Andreia</option>
+                    <option value="Roberto">Roberto</option>
                   </select>
                 </div>
                 <div class="col mb-3">
@@ -289,14 +289,14 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
             }
             ?> >
                     <option selected>Selecione o Horário</option>
-                    <option value="1">10:00</option>
-                    <option value="2">11:00</option>
-                    <option value="3">12:00</option>
-                    <option value="4">13:00</option>
-                    <option value="5">14:00</option>
-                    <option value="6">15:00</option>
-                    <option value="7">17:00</option>
-                    <option value="8">18:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
                   </select>
                 </div>
                 <input type="submit" value="Agendar" class="btn btn-warning" href="index.php"/>
@@ -304,10 +304,8 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
         </div>
           </form>
         </div>
-        </div>
         <footer class="text-muted py-2">
   <div class="container">
-
     <div class="row">
       <h2 class="text-white">Como chegar</h2>
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7317.14671270287!2d-47.494593!3d-23.511872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1a5a4482a917c0b!2sYeshua%20barber%20shop%20e%20sal%C3%A3o%20de%20beleza!5e0!3m2!1spt-BR!2sbr!4v1636944834098!5m2!1spt-BR!2sbr" width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -318,8 +316,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
       <a href="#">Voltar ao topo</a>
     </p>
 </footer>
-        </body>
-        
+        </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
@@ -332,4 +329,6 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
 <script>
   $("#datepicker").datepicker();
 </script>
+        </body>
+
         </html>
