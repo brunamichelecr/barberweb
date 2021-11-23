@@ -158,7 +158,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
             }
             ?> >
                   <label for="telefone" class="form-label">Telefone</label>
-                  <input type="text" name="telefone" class="form-control" id="telefone" aria-describedby="telefone" placeholder="Telefone" <?php
+                  <input type="text" name="telefone" class="form-control" id="telefone" aria-describedby="telefone" placeholder="Telefone" required <?php
             if (isset($telefone) && $telefone != null || $telefone != ""){
                 echo "value=\"{$telefone}\"";
             }
@@ -168,14 +168,14 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
                 </div>
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="nome" class="form-control" placeholder="Nome" aria-label="First name" <?php
+                    <input type="text" name="nome" class="form-control" placeholder="Nome" aria-label="First name" required <?php
             if (isset($nome) && $nome != null || $nome != ""){
                 echo "value=\"{$nome}\"";
             }
             ?> >
                   </div>
                   <div class="col">
-                    <input type="text" name="sobrenome" class="form-control" placeholder="Sobrenome" aria-label="Last name" <?php
+                    <input type="text" name="sobrenome" class="form-control" placeholder="Sobrenome" aria-label="Last name" required <?php
             if (isset($sobrenome) && $sobrenome != null || $sobrenome != ""){
                 echo "value=\"{$sobrenome}\"";
             }
@@ -187,12 +187,12 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
                   <label for="telefone" class="form-label">Data de Aniversário</label>
                   <div class="row mb-3">
                       <div class="col">
-                  <select name="daniversario" class="form-select" aria-label="Default select example" <?php
+                  <input name="daniversario" class="form-control" list="mes" placeholder="Dia do aniversário" aria-label="Default select example" required <?php
             if (isset($daniversario) && $daniversario != null || $daniversario != ""){
                 echo "value=\"{$daniversario}\"";
             }
             ?> >
-                    <option selected>Mês</option>
+                    <datalist id="mes">
                     <option value="Janeiro">Janeiro</option>
                     <option value="Fevereiro">Fevereiro</option>
                     <option value="Março">Março</option>
@@ -205,16 +205,16 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
                     <option value="Outubro">Outubro</option>
                     <option value="Novembro">Novembro</option>
                     <option value="Dezembro">Dezembro</option>
-                  </select>
+          </datalit>
         </div>
 
             <div class="col">
-                  <select name="maniversario" class="form-select col" aria-label="Default select example" <?php
+            <input class="form-control" list="datadoaniversario" id="exampleDataList" placeholder="Dia do aniversário" name="maniversario" class="form-select col" aria-label="Default select example" required <?php
             if (isset($maniversario) && $maniversario != null || $maniversario != ""){
                 echo "value=\"{$maniversario}\"";
             }
             ?> >
-                    <option selected>Dia</option>
+                  <datalist id="datadoaniversario">
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
@@ -246,25 +246,25 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
                     <option value="29">29</option>
                     <option value="30">30</option>
                     <option value="31">31</option>
-                  </select>
+        </datalist>
                 </div>
         </div>
         </div>
         </div>
                 <div class="mb-3">
-                  <select name="servico" class="form-select" aria-label="Default select example" <?php
+                  <input class="form-control" list="servicos" placeholder="Selecione o serviço" name="servico" class="form-select" aria-label="Default select example" required <?php
             if (isset($servico) && $servico != null || $servico != ""){
                 echo "value=\"{$servico}\"";
             }
             ?> >
-                    <option selected>Selecione o tipo de serviço</option>
+                    <datalist id="servicos">Selecione o tipo de serviço
                     <option value="Corte">Corte</option>
                     <option value="Pintura">Pintura</option>
                     <option value="Barba">Barba</option>
-                  </select>
+          </datalist>
                 </div>
                 <div class="mb-3">
-                  <select name="profissional" class="form-select" aria-label="Default select example" <?php
+                  <select name="profissional" class="form-select" aria-label="Default select example" required <?php
             if (isset($profissional) && $profissional != null || $profissional != ""){
                 echo "value=\"{$profissional}\"";
             }
@@ -276,14 +276,14 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
                   </select>
                 </div>
                 <div class="col mb-3">
-                  <input name="dia" type="text"  class="form-control" placeholder="Selecione a Data" id="datepicker" <?php
+                  <input name="dia" type="text"  class="form-control" placeholder="Selecione a Data" id="datepicker" required <?php
             if (isset($dia) && $dia != null || $dia != ""){
               echo "value=\"{$dia}\"";
             }
             ?> >
                 </div>
                 <div class="mb-3">
-                  <select name="hora" class="form-select" aria-label="Default select example"<?php
+                  <select name="hora" class="form-select" aria-label="Default select example" required <?php
             if (isset($hora) && $hora != null || $hora != ""){
                 echo "value=\"{$hora}\"";
             }
