@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 try {
-  $conexao = new PDO("mysql:host=localhost; dbname=db_barber01", "root", "Isabel2410.");
+  $conexao = new PDO("mysql:host=localhost; dbname=pro61519_barberweb", "pro61519_barber", "PJI110-0030-osasco");
   $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $conexao->exec("set names utf8");
 } catch (PDOException $erro) {
