@@ -50,7 +50,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
       if ($stmt->execute()) {
           if ($stmt->rowCount() > 0) {
               echo "Agendamento concluído com sucesso!";
-              header("Location: confirmacao.php");
+              header("Location: index.php");
               $id = null;
               $telefone = null;
               $nome = null;
@@ -187,7 +187,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
                   <label for="telefone" class="form-label">Data de Aniversário</label>
                   <div class="row mb-3">
                       <div class="col">
-                  <input name="daniversario" class="form-control" list="mes" placeholder="Dia do aniversário" aria-label="Default select example" required <?php
+                  <input name="daniversario" class="form-control" list="mes" placeholder="Mês do aniversário" aria-label="Default select example" required <?php
             if (isset($daniversario) && $daniversario != null || $daniversario != ""){
                 echo "value=\"{$daniversario}\"";
             }
