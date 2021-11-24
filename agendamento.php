@@ -282,12 +282,12 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
             ?> >
                 </div>
                 <div class="mb-3">
-                  <select name="hora" class="form-select" aria-label="Default select example" required <?php
+                  <input list="horario" placeholder="Selecione o horário" name="hora" class="form-select" aria-label="Default select example" required <?php
             if (isset($hora) && $hora != null || $hora != ""){
                 echo "value=\"{$hora}\"";
             }
             ?> >
-                    <option selected>Selecione o Horário</option>
+                    <datalist id="horario">Selecione o Horário
                     <option value="10:00">10:00</option>
                     <option value="11:00">11:00</option>
                     <option value="12:00">12:00</option>
@@ -296,7 +296,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
                     <option value="15:00">15:00</option>
                     <option value="16:00">16:00</option>
                     <option value="17:00">17:00</option>
-                  </select>
+          </datalist>
                 </div>
                 <input type="submit" value="Agendar" class="btn btn-warning" href="index.php"/>
                <input type="reset" value="Novo" class="btn btn-secondary"/>
