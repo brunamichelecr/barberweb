@@ -49,7 +49,6 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
        
       if ($stmt->execute()) {
           if ($stmt->rowCount() > 0) {
-              echo "Agendamento concluído com sucesso!";
               header("Location: index.php");
               $id = null;
               $telefone = null;
@@ -264,16 +263,16 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $telefone != "") {
           </datalist>
                 </div>
                 <div class="mb-3">
-                  <select name="profissional" class="form-select" aria-label="Default select example" required <?php
+                  <input list="profissional" placeholder="Selecione o profissional" name="profissional" class="form-select" aria-label="Default select example" required <?php
             if (isset($profissional) && $profissional != null || $profissional != ""){
                 echo "value=\"{$profissional}\"";
             }
             ?> >
-                    <option selected>Selecione o profissional</option>
+                    <datalist id="profissional">Selecione o profissional
                     <option value="Adriano">Adriano</option>
                     <option value="Andreia">Andreia</option>
                     <option value="Roberto">Roberto</option>
-                  </select>
+          </datalist>
                 </div>
                 <div class="col mb-3">
                   <input name="dia" type="text"  class="form-control" placeholder="Selecione a Data" id="datepicker" required <?php
